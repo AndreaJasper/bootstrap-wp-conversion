@@ -34,7 +34,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bootstrap-to-wordpress' ); ?></a>
 
-
+	<!--remove this just need to make a change to commit to github-->
 
 	 <!-- HEADER
     ==========================================================-->
