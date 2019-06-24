@@ -43,21 +43,23 @@
         ==========================================================-->
                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                         <div class="container">    
-                            <a class="navbar-brand" href="#"><img src="<?php bloginfo('stylesheet_directory); ?>/assets/img/logo.png" alt="logo"></a>
+                            <a class="navbar-brand" href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo.png" alt="logo"></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                               <span class="navbar-toggler-icon"></span>
 							</button><!-- navbar header -->
 							
 							<?php
 								wp_nav_menu( array(
-									'theme)location'  => 'primary',
+									'theme_location'  => 'primary',
 									'container' => 'nav',
-									'containt_class' => 'navbar-toggler',
+									'container_class' => 'navbar-toggler',
 									'menu_class' => 'nav navbar-nav navbar-right'
 								));
 							?>	
                         </div>    
-                    </nav><!--navbar wrapper end-->           
-    </header>
+					</nav><!--navbar wrapper end-->           
+	</header>
 
-	<div id="content" class="site-content">
+<div id="content" class="site-content">
+
+
