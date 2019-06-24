@@ -58,6 +58,7 @@
 							?>	
                         </div>    
 					</nav><!--navbar wrapper end-->  
+					
 	</header>
 
 <div id="content" class="site-content">
