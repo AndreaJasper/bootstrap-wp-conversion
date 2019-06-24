@@ -388,7 +388,7 @@ body {
     background: url('/wp-content/themes/bootstrap-wp-conversion/assets/img/tile.jpg') top left repeat;
 }
 
-.logged-in .navbar-fixed-top {
+.logged-in .fixed-top {
     top: 32;
 }
 
@@ -1014,7 +1014,7 @@ button[type="submit"]:hover {
 }
 
 @media screen and ( max-width : 782px) {
-    .logged-in .navbar-fixed-top {
+    .logged-in .fixed-top {
         top: 46px;
     }
 }
@@ -1040,7 +1040,7 @@ button[type="submit"]:hover {
 }
 
 @media screen and (max-width : 600px) {
-    .logged-in .navbar-fixed-top {
+    .logged-in .fixed-top {
         top: 42px;
     }
 }
