@@ -32,7 +32,7 @@ get_header();
                                            <span>$399</span> 
                                     </div>
                                 </div>
-                                <p><a class="btn btn-lg btn-danger" href="/" role="button">Enroll &raquo;</a></p>
+                                <p><a class="btn btn-lg btn-danger" href="/" role="button">Enroll Now &raquo;</a></p>
                     </div>
                 </div>
             </div>
