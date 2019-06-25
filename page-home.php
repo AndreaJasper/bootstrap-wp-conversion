@@ -13,7 +13,7 @@ get_header();
             <div class="container clearfix">
                 <div class="row">
                     <div class="col-sm-5">
-                        <img src="assets/img/logo-badge.png" alt="Bootstrap to WordPress" class="logo">
+                        <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo-badge.png" alt="Bootstrap to WordPress" class="logo">
                     </div>
                     <div class="col-sm-7 hero-text">
                         <h1>Bootstrap to WordPress</h1>
@@ -60,7 +60,7 @@ get_header();
     <section id="boost-income">
         <div class="container">
             <div class="section-header">
-                <img src="assets/img/icon-boost.png" alt="Chart">
+                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-boost.png" alt="Chart">
                 <h2>How You Can Boost Your Income</h2>
             </div>
             <p class="lead">Whether you’re a freelance designer, entrepreneur, employee for a company, code hobbyist, or looking for a new career — this course gives you an immensely valuable skill that will enable you to either:</p>
@@ -82,7 +82,7 @@ get_header();
     <section id="who-benefits">
         <div class="container">
             <div class="section-header">
-                <img src="assets/img/icon-pad.png" alt="Pad and pencil">
+                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-pad.png" alt="Pad and pencil">
                 <h2>Who Should Take This Course?</h2>
             </div>
             <div class="row">
@@ -120,7 +120,7 @@ get_header();
     <section id="course-features">
         <div class="container">
             <div class="section-header">
-                <img src="assets/img/icon-rocket.png" alt="Rocket">
+                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-rocket.png" alt="Rocket">
                 <h2>Course Features</h2>
             </div>
             <div class="row">
@@ -160,17 +160,17 @@ get_header();
                 <p class="lead">Throughout this entire course, you work towards building an incredibly beautiful website. Want to see the website you are going to build? You're looking at it! The website you're using right now is the website you will have built entirely by yourself, by the end of this course.</p>
             <div class="row">
                 <div class="col-sm-4">
-                    <img src="assets/img/icon-design.png" alt="Design">
+                    <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-design.png" alt="Design">
                     <h3>Sexy &amp; Modern Design</h3>
                     <p>You get to work with a modern, professional quality design &amp; layout.</p>
                 </div>
                 <div class="col-sm-4">
-                    <img src="assets/img/icon-code.png" alt="Code">
+                    <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-code.png" alt="Code">
                     <h3>Quality HTML5 &amp; CSS3</h3>
                     <p>You'll learn how hand-craft a stunning website with valid, semantic and beautiful HTML5 &amp; CSS3.</p>
                 </div>
                 <div class="col-sm-4">
-                    <img src="assets/img/icon-cms.png" alt="CSS">
+                    <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-cms.png" alt="CSS">
                     <h3>Easy-to-use CMS</h3>
                     <p>Allow your clients to easily update their websites by converting your static websites to dynamic websites, using WordPress.</p>
                 </div>
@@ -254,7 +254,7 @@ get_header();
                     <!-- TESTIMONIAL -->
                     <div class="row testimonial">
                         <div class="col-sm-4">
-                            <img src="assets/img/brennan.jpg" alt="Brennan">
+                            <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/brennan.jpg" alt="Brennan">
                         </div>
                         <div class="col-sm-8">
                             <blockquote>
@@ -265,7 +265,7 @@ get_header();
                     <!-- TESTIMONIAL -->
                     <div class="row testimonial">
                             <div class="col-sm-4">
-                                <img src="assets/img/ben.png" alt="Illustration of a man with a moustache">
+                                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/ben.png" alt="Illustration of a man with a moustache">
                             </div>
                             <div class="col-sm-8">
                                 <blockquote>
@@ -276,7 +276,7 @@ get_header();
                     <!-- TESTIMONIAL -->
                     <div class="row testimonial">
                             <div class="col-sm-4">
-                                <img src="assets/img/aj.png" alt="Illustration of a man with a beard">
+                                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/aj.png" alt="Illustration of a man with a beard">
                             </div>
                             <div class="col-sm-8">
                                 <blockquote>
@@ -287,7 +287,7 @@ get_header();
                     <!-- TESTIMONIAL -->
                     <div class="row testimonial">
                             <div class="col-sm-4">
-                                <img src="assets/img/ernest.png" alt="Illustration of a man with a goatee">
+                                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/ernest.png" alt="Illustration of a man with a goatee">
                             </div>
                             <div class="col-sm-8">
                                 <blockquote>
