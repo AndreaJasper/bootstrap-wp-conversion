@@ -2,9 +2,21 @@
 /*
     Template Name: Homepage
  */
+$pre_launch_price_title  = get_field('pre_launch_price_title');
+$pre_launch_price_description  = get_field('pre_launch_price_description');
+$pre_launch_price  = get_field('pre_launch_price');
 
-get_header();
-?>
+ // Advanced Custom Fields //
+ $income_feature_image  = get_field('income_feature_image');
+ $income_section_title  = get_field('income_section_title');
+ $income_section_desc  = get_field('$income_section_description');
+ $reason_1_title  = get_field('reason_1_title');
+ $reson_1_desc = get_field('reason_1_description');
+ $reason_2_title  = get_field('reason_2_title');
+ $reson_2_desc = get_field('reason_2_description');
+
+
+get_header(); ?>
 
   <!-- HERO BANNER
     ==========================================================-->
@@ -16,11 +28,11 @@ get_header();
                         <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo-badge.png" alt="Bootstrap to WordPress" class="logo">
                     </div>
                     <div class="col-sm-7 hero-text">
-                        <h1>Bootstrap to WordPress</h1>
-                        <p class="lead">Earn An Extra $1k - $5k a Month by Learning to Code Your Very Own Responsive &amp; Custom WordPress Websites with Bootstrap</p>
+                        <h1><?php bloginfo('name'); ?></h1> <!--Pulls in the site title in settings > general -->
+                        <p class="lead"><?php bloginfo('description'); ?></p> <!-- This pulls in the site tagline in settings > general -->
                             <div id=price-timeline>
                                     <div class="price active">
-                                        <h4>Pre-Launch Price <small>Ends soon!</small></h4>
+                                        <h4><?php echo $pre_launch_price_title; ?> <small><?php echo $pre_launch_description; ?></small></h4>
                                         <span>$149</span>
                                     </div>
                                     <div class="price">
@@ -60,18 +72,23 @@ get_header();
     <section id="boost-income">
         <div class="container">
             <div class="section-header">
-                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-boost.png" alt="Chart">
-                <h2>How You Can Boost Your Income</h2>
+
+                <!-- If user uploaded an image -->
+                <?php if( !empty($income_feature_image) ) : ?>
+                    <img src="<?php echo $income_feature_image['url']; ?>" alt="<?php echo $income_feature_image['alt']; ?>">
+                <?php endif; ?>
+
+                <h2><?php echo $income_section_title; ?></h2>
             </div>
-            <p class="lead">Whether you’re a freelance designer, entrepreneur, employee for a company, code hobbyist, or looking for a new career — this course gives you an immensely valuable skill that will enable you to either:</p>
+            <p class="lead"><?php echo $income_section_desc; ?></p>
             <div class="row">
                 <div class="col-sm-6">
-                    <h3>Make money on the side</h3>
-                    <p>So you can save up for that Hawaiian vacation you’ve been wanting, help pay off your debt, your car, your mortgage, or simply just to have bonus cash laying around.</p>
+                    <h3><?php echo $reason_1_title; ?></h3>
+                    <p><?php echo $reason_1_desc; ?></p>
                 </div>
                 <div class="col-sm-6">
-                    <h3>Create a full-time income</h3>
-                    <p>WordPress developers have options. Many developers make a generous living off of creating custom WordPress themes and selling them on websites like ThemeForest. Freelance designers and developers can also take on WordPress projects and make an extra $1,000 - $5,000+ per month.</p>
+                    <h3><?php echo $reason_2_title; ?></h3>
+                    <p><?php echo $reason_2_desc; ?></p>
                 </div>
             </div>
         </div>
