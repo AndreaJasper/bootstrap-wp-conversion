@@ -2,18 +2,35 @@
 /*
     Template Name: Homepage
  */
+
+ // Advanced Custom Fields //
+
+ //Pricing//
 $pre_launch_price_title  = get_field('pre_launch_price_title');
 $pre_launch_price_description  = get_field('pre_launch_price_description');
 $pre_launch_price  = get_field('pre_launch_price');
+$launch_price_title  = get_field('pre_launch_price_title');
+$launch_price_description  = get_field('pre_launch_price_description');
+$launch_price  = get_field('pre_launch_price');
+$final_price_title  = get_field('final_price_title');
+$final_price_description  = get_field('final_price_description');
+$final_price  = get_field('final_price');
+$enroll_now_button = get_field('enroll_now_button');
 
- // Advanced Custom Fields //
+ //How you can boost your income//
  $income_feature_image  = get_field('income_feature_image');
  $income_section_title  = get_field('income_section_title');
  $income_section_desc  = get_field('$income_section_description');
  $reason_1_title  = get_field('reason_1_title');
- $reson_1_desc = get_field('reason_1_description');
+ $reason_1_desc = get_field('reason_1_description');
  $reason_2_title  = get_field('reason_2_title');
- $reson_2_desc = get_field('reason_2_description');
+ $reason_2_desc = get_field('reason_2_description');
+
+ //Who should take this course//
+ $who_feature_image = get_field('who_feature_image');
+ $who_section_title = get_field('who_section_title');
+ $who_section_body = get_field('who_section_body');
+
 
 
 get_header(); ?>
@@ -32,16 +49,16 @@ get_header(); ?>
                         <p class="lead"><?php bloginfo('description'); ?></p> <!-- This pulls in the site tagline in settings > general -->
                             <div id=price-timeline>
                                     <div class="price active">
-                                        <h4><?php echo $pre_launch_price_title; ?> <small><?php echo $pre_launch_description; ?></small></h4>
-                                        <span>$149</span>
+                                        <h4><?php echo $pre_launch_price_title; ?><small><?php echo $pre_launch_price_description; ?></small></h4>
+                                        <span><?php echo $pre_launch_price; ?></span>
                                     </div>
                                     <div class="price">
-                                        <h4>Launch Price <small>Coming soon!</small></h4>
-                                        <span>$299</span>  
+                                        <h4><?php echo $launch_price_title; ?><small><?php echo $launch_price_description; ?></small></h4>
+                                        <span><?php echo $launch_price; ?></span>  
                                     </div>
                                     <div class="price">
-                                        <h4>Final Price <small>Coming soon!</small></h4>
-                                           <span>$399</span> 
+                                        <h4><?php echo $final_price_title; ?><small><?php echo $final_price_description; ?></small></h4>
+                                           <span><?php echo $final_price; ?></span> 
                                     </div>
                                 </div>
                                 <p><a class="btn btn-lg btn-danger" href="/" role="button">Enroll Now &raquo;</a></p>
@@ -99,34 +116,15 @@ get_header(); ?>
     <section id="who-benefits">
         <div class="container">
             <div class="section-header">
-                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-pad.png" alt="Pad and pencil">
-                <h2>Who Should Take This Course?</h2>
+            <!-- If user uploaded an image -->
+                <?php if( !empty($who_feature_image) ) : ?>
+                    <img src="<?php echo $who_feature_image['url']; ?>" alt="<?php echo $who_feature_image['alt']; ?>">
+                <?php endif; ?>
+                <h2><?php echo $who_section_title; ?></h2>
             </div>
             <div class="row">
                 <div class="col-sm-8 offset-sm-2">
-                    <h3>Grapics &amp; Web Designers</h3>
-                        <p>Graphic designers are extremely talented, but ask them to code their designs and they’ll freeze up! This leaves them with no other choice but to hire a web developer. Any professional graphic designers knows web developers can be expensive.
-                        </p>
-                        <p>If you’re a designer, learning to code your own WordPress websites can change your business entirely! Now, not only are you a great designer, but you’re a skillful developer, too! This puts you in a position to <strong>make an extra $1,000 – $5,000 per project.</strong>
-                        </p>
-                    <h3>Entrepreneurs</h3>
-                        <p>Entrepreneurs have big dreams, and in many cases, shoestring budgets. In order to survive in the cut-throat world of the Startup company, it’s a necessity to have a world-class website. However, world-class websites come with a large price tag.
-                        </p>
-                        <p>If you can learn how to build a high-quality startup website by yourself, then you’ve just saved yourself a lot of cash, <strong>tens of thousands of dollars in many cases.</strong>
-                        </p>
-                    <h3>Employees</h3>
-                        <p>Any company knows the education & training of their employees is key to a thriving team.
-                        </p>
-                        <p>Depending on the type of company you work for, if you understand how to code, and can develop CMS driven websites, that gives you <strong>negotiating power for a better position, or a higher salary.</strong>
-                        </p>
-                    <h3>Code Hobbyists</h3>
-                        <p>It’s fun to learn challenging new skills. Code hobbyists can add dynamic websites to their arsenal of tools to play with — you can even <strong> sell WordPress themes and plugins for cash!</strong> The possibilities are truly endless.
-                        </p>   
-                    <h3>People Looking for a New Career</h3>
-                        <p>Are you out of work? Looking for a more rewarding job? Desire a career that can allow you to work almost anywhere in the world? Becoming a Web Developer might be the answer for you.
-                        </p>
-                        <p><strong>Web developers are paid well, anywhere from $33,000 to more than $105,000 per year.</strong> They get to work at amazing companies that are changing the world, or they enjoy the ability to start their own companies, become location-independent and work from home, from coffee shops, in an airplane, on the beach, or wherever they want!
-                        </p>                
+                 <?php echo $who_section_body; ?>         
                 </div>
             </div>
         </div>
