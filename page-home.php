@@ -31,6 +31,20 @@ $enroll_now_button = get_field('enroll_now_button');
  $who_section_title = get_field('who_section_title');
  $who_section_body = get_field('who_section_body');
 
+ //Who should take this course//
+ $features_section_image = get_field('features_section_image');
+ $features_section_title = get_field('features_section_title');
+ $features_section_body = get_field('features_section_body');
+
+ 
+ //Project Features//
+$project_feature_title = get_field('project_feature_title');
+$project_feature_body = get_field('project_feature_body');
+
+ //Course Instruction//
+ $course_instruction_title = get_field('course_instruction_title');
+ $course_instruction_body = get_field('course_instruction_body');
+ $course_instruction_video = get_field('course_instruction_video');
 
 
 get_header(); ?>
@@ -135,34 +149,28 @@ get_header(); ?>
     <section id="course-features">
         <div class="container">
             <div class="section-header">
-                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-rocket.png" alt="Rocket">
-                <h2>Course Features</h2>
+             <!-- If user uploaded an image -->
+                <?php if( !empty($features_section_image) ) : ?>
+                    <img src="<?php echo $features_section_image['url']; ?>" alt="<?php echo $features_section_image['alt']; ?>">
+                <?php endif; ?>
+                <h2><?php echo $features_section_title; ?></h2>
+
+            <!-- If user added body text -->
+                <?php if( !empty($features_section_body) ) : ?>
+                    <p><?php echo $features_section_body; ?></p>
+                <?php endif; ?>
             </div>
             <div class="row">
-                <div class="col-sm-2">
-                    <i class="ci ci-computer"></i>
-                    <h4>Lifetime access to 80+ lectures</h4>
-                </div>
-                <div class="col-sm-2">
-                    <i class="ci ci-watch"></i>
-                    <h4>10+ hours of HD vide content</h4>
-                </div>
-                <div class="col-sm-2">
-                    <i class="ci ci-calendar"></i>
-                    <h4>30-day money back guarantee</h4>
-                </div>
-                <div class="col-sm-2">
-                    <i class="ci ci-community"></i>
-                    <h4>Access to a community of like-minded students</h4>
-                </div>
-                <div class="col-sm-2">
-                    <i class="ci ci-instructor"></i>
-                    <h4>Direct access to the instructor</h4>
-                </div>
-                <div class="col-sm-2">
-                    <i class="ci ci-device"></i>
-                    <h4>Accessible content on your mobile devices</h4>
-                </div>
+
+                <?php $loop = new WP_Query( array ( 'post_type' => 'course_feature', 'order_byd' => 'post_id', 'order' => 'ASC' ) ); ?>
+
+                <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
+                    <div class="col-sm-2">
+                        <i class="<?php the_field('course_feature_icon'); ?>"></i>
+                        <h4><?php the_title(); ?></h4>
+                    </div>
+
+                <?php endwhile; ?>
             </div>
         </div>
     </section>
@@ -171,25 +179,23 @@ get_header(); ?>
     ==========================================================-->
     <section id="project-features">
         <div class="container">
-                <h2>Final Project Features</h2>
-                <p class="lead">Throughout this entire course, you work towards building an incredibly beautiful website. Want to see the website you are going to build? You're looking at it! The website you're using right now is the website you will have built entirely by yourself, by the end of this course.</p>
+                <h2><?php echo $project_feature_title; ?></h2>
+                <p class="lead"><?php echo $project_feature_body; ?></p>
             <div class="row">
-                <div class="col-sm-4">
-                    <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-design.png" alt="Design">
-                    <h3>Sexy &amp; Modern Design</h3>
-                    <p>You get to work with a modern, professional quality design &amp; layout.</p>
-                </div>
-                <div class="col-sm-4">
-                    <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-code.png" alt="Code">
-                    <h3>Quality HTML5 &amp; CSS3</h3>
-                    <p>You'll learn how hand-craft a stunning website with valid, semantic and beautiful HTML5 &amp; CSS3.</p>
-                </div>
-                <div class="col-sm-4">
-                    <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-cms.png" alt="CSS">
-                    <h3>Easy-to-use CMS</h3>
-                    <p>Allow your clients to easily update their websites by converting your static websites to dynamic websites, using WordPress.</p>
-                </div>
+                <?php $loop = new WP_Query( array ( 'post_type' => 'project_feature', 'order_byd' => 'post_id', 'order' => 'ASC' ) ); ?>
 
+                <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
+                    <div class="col-sm-4">
+                        <?php 
+                            if ( has_post_thumbnail() ) {
+                                the_post_thumbnail();
+                            }
+                        
+                        ?>
+                        <h3><?php the_title(); ?></h3>
+                        <p><?php the_content(); ?></p>
+                    </div>
+                <?php endwhile; ?>
             </div>
         </div>
     </section>
@@ -200,8 +206,14 @@ get_header(); ?>
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 offset-sm-2">
-                    <h2>Watch the Course Introduction</h2>
-                    <iframe width="100%" height="415" src="https://www.youtube.com/embed/q-mJJsnOHew?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <h2><?php echo $course_instruction_title; ?></h2>
+                    <!-- If user added body text -->
+                <?php if( !empty($course_instruction_body) ) : ?>
+                    <p><?php echo $course_instruction_body; ?></p>
+                <?php endif; ?>
+                    <div class="embed-container">
+                        <?php echo $course_instruction_video; ?>
+                    </div>
                 </div>
             </div>
         </div>
