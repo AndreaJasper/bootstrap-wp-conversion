@@ -193,6 +193,7 @@ get_header(); ?>
                 <h2><?php echo $project_feature_title; ?></h2>
                 <p class="lead"><?php echo $project_feature_body; ?></p>
             <div class="row">
+            <!-- looops through custom post type project features -->
                 <?php $loop = new WP_Query( array ( 'post_type' => 'project_feature', 'order_byd' => 'post_id', 'order' => 'ASC' ) ); ?>
 
                 <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -292,51 +293,26 @@ get_header(); ?>
             <div class="row">
                 <div class="col-sm-8 offset-sm-2">
                     <h2>What People Are Saying About Brad</h2>
+                    <!--loops through custom post type Testimonials -->
+                    <?php $loop = new WP_Query( array ( 'post_type' => 'testimonial', 'order_byd' => 'post_id', 'order' => 'ASC' ) ); ?>
 
-                    <!-- TESTIMONIAL -->
-                    <div class="row testimonial">
-                        <div class="col-sm-4">
-                            <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/brennan.jpg" alt="Brennan">
-                        </div>
-                        <div class="col-sm-8">
-                            <blockquote>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in erat at nunc rutrum tincidunt sit amet ut tortor. Pellentesque vel ornare quam, et iaculis nisl. In purus lectus, molestie a elementum vitae, placerat sed velit. Sed mi tortor, finibus a mollis nec, rutrum sagittis risus. Vivamus non elit volutpat, dapibus ipsum in, interdum nisl. <cite>&mdash; Brennan, graduate of all of Brad's courses</cite>
-                            </blockquote>
-                        </div>
-                    </div>
-                    <!-- TESTIMONIAL -->
-                    <div class="row testimonial">
+                    <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
+                        <div class="row testimonial">
                             <div class="col-sm-4">
-                                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/ben.png" alt="Illustration of a man with a moustache">
+                                <?php 
+                                    if ( has_post_thumbnail() ) {
+                                        the_post_thumbnail( array( 200, 200 ) );
+                                    }
+                                
+                                ?>
                             </div>
                             <div class="col-sm-8">
                                 <blockquote>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in erat at nunc rutrum tincidunt sit amet ut tortor. Pellentesque vel ornare quam, et iaculis nisl. In purus lectus, molestie a elementum vitae, placerat sed velit. Sed mi tortor, finibus a mollis nec, rutrum sagittis risus. Vivamus non elit volutpat, dapibus ipsum in, interdum nisl. <cite>&mdash; Ben, graduate of Build a Website from Scratch with HTML &amp; CSS</cite>
+                                        <?php the_content(); ?><cite>&mdash; <?php the_title(); ?></cite>
                                 </blockquote>
                             </div>
                         </div>
-                    <!-- TESTIMONIAL -->
-                    <div class="row testimonial">
-                            <div class="col-sm-4">
-                                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/aj.png" alt="Illustration of a man with a beard">
-                            </div>
-                            <div class="col-sm-8">
-                                <blockquote>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in erat at nunc rutrum tincidunt sit amet ut tortor. Pellentesque vel ornare quam, et iaculis nisl. In purus lectus, molestie a elementum vitae, placerat sed velit. Sed mi tortor, finibus a mollis nec, rutrum sagittis risus. Vivamus non elit volutpat, dapibus ipsum in, interdum nisl. <cite>&mdash; AJ, graduate of Code a Responsive Website with Bootstrap 3</cite>
-                                </blockquote>
-                            </div>
-                        </div> 
-                    <!-- TESTIMONIAL -->
-                    <div class="row testimonial">
-                            <div class="col-sm-4">
-                                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/ernest.png" alt="Illustration of a man with a goatee">
-                            </div>
-                            <div class="col-sm-8">
-                                <blockquote>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in erat at nunc rutrum tincidunt sit amet ut tortor. Pellentesque vel ornare quam, et iaculis nisl. In purus lectus, molestie a elementum vitae, placerat sed velit. Sed mi tortor, finibus a mollis nec, rutrum sagittis risus. Vivamus non elit volutpat, dapibus ipsum in, interdum nisl. <cite>&mdash; Ernest, graduate of Code Dynamic Websites with PHP</cite>
-                                </blockquote>
-                            </div>
-                        </div>       
+                    <?php endwhile; ?> 
                 </div>
             </div>
         </div>
