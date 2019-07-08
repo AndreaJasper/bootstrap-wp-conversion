@@ -9,13 +9,12 @@
 $pre_launch_price_title  = get_field('pre_launch_price_title');
 $pre_launch_price_description  = get_field('pre_launch_price_description');
 $pre_launch_price  = get_field('pre_launch_price');
-$launch_price_title  = get_field('pre_launch_price_title');
-$launch_price_description  = get_field('pre_launch_price_description');
-$launch_price  = get_field('pre_launch_price');
+$launch_price_title  = get_field('launch_price_title');
+$launch_price_description  = get_field('launch_price_description');
+$launch_price  = get_field('launch_price');
 $final_price_title  = get_field('final_price_title');
 $final_price_description  = get_field('final_price_description');
 $final_price  = get_field('final_price');
-$enroll_now_button = get_field('enroll_now_button');
 
  //How you can boost your income//
  $income_feature_image  = get_field('income_feature_image');
@@ -31,7 +30,7 @@ $enroll_now_button = get_field('enroll_now_button');
  $who_section_title = get_field('who_section_title');
  $who_section_body = get_field('who_section_body');
 
- //Who should take this course//
+ //Course features//
  $features_section_image = get_field('features_section_image');
  $features_section_title = get_field('features_section_title');
  $features_section_body = get_field('features_section_body');
@@ -53,7 +52,6 @@ $project_feature_body = get_field('project_feature_body');
  $full_bio = get_field('full_bio');
  $twiter_username = get_field('twitter_username');
  $facebook_username = get_field('facebook_username');
- $google_plus = get_field('google_plus');
  $num_students = get_field('num_students');
  $num_reviews = get_field('num_reviews');
  $num_courses = get_field('num_courses');
@@ -248,10 +246,7 @@ get_header(); ?>
                                 <?php endif; ?>
                             <?php if( !empty($facebook_username) ): ?>        
                                 <a href="https://facebook.com<?php echo $facebook_username; ?>" target="_blank" class="badge social facebook"><i class="fab fa-facebook-f"></i></a>
-                            <?php endif; ?>
-                            <?php if( !empty($google_plus_username) ): ?>        
-                                <a href="https://plus.google.com<?php echo $google_plus_username; ?>" target="_blank" class="badge social gplus"><i class="fab fa-google-plus-g"></i></a>
-                            <?php endif; ?>                                
+                            <?php endif; ?>                              
                         </div>
                     </div>
                     <p class="lead"><?php echo $bio_excerpt; ?></p>
