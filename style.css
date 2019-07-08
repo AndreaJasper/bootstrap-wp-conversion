@@ -639,7 +639,7 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .main-navigation {
 	clear: both;
-	display: block;
+	display: inline;
 	float: left;
 	width: 100%;
 }
