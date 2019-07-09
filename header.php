@@ -37,32 +37,31 @@
 
 	<!--remove this just need to make a change to commit to github-->
 
-	 <!-- HEADER
+	<!-- HEADER
     ==========================================================-->
     <header class="site-header" role="banner">
         <!--NAVBAR
         ==========================================================-->
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-                        <div class="container">    
-                            <a class="navbar-brand" href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo.png" alt="logo"></a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                              <span class="navbar-toggler-icon"></span>
-							</button><!-- navbar header -->
-							<div class="collapse navbar-collapse" id="navbarSupportedContent">
-								<?php
-									wp_nav_menu( array(
-										'theme_location'  => 'primary',
-										'container' => 'nav',
-										'container_class' => 'navbar-toggler collapse navbar-collapse',
-										'menu_class' => 'nav navbar-nav navbar-right'
-									));
-								?>	
-							</div>
-								</div> 
-					</nav><!--navbar wrapper end-->  
-					
-	</header>
+		<div class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">    
+				<div class="navbar-header">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+					</button>
+					<a class="navbar-brand" href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo.png" alt="logo"></a>
+				</div><!--navbar header-->
+
+				<?php 
+					wp_nav_menu( array(
+						'theme_location'	=> 'primary',
+						'container'		=> 'nav',
+						'container_class' => 'navbar-collapse collapse',
+						'menu_class' => 'nav navbar-nav justify-content-end'
+					));
+				?>
+            </div><!--container end -->   
+		</div><!--navbar end-->  
+    </header>
 
 <div id="content" class="site-content">
-
 
