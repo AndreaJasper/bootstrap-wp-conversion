@@ -640,7 +640,7 @@ a:hover, a:active {
 .main-navigation {
 	clear: both;
 	display: inline;
-	float: left;
+	float: right;
 	width: 100%;
 }
 
@@ -1051,15 +1051,24 @@ a:hover {
     color: #c9302c;
 }
 
-li.nav-item a {
+nav.navbar-collapse.collapse {
+    display: inline!important;
+}
+
+#menu-primary-menu li {
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+#menu-primary-menu li a{
     color: white;
 }
 
-li.nav-item a:hover {
+#menu-primary-menu li a:hover {
     color: #c9302c;
 }
 
-li.nav-item a:visited {
+#menu-primary-menu li a:visited {
     color: #dd5638;
 }
 
